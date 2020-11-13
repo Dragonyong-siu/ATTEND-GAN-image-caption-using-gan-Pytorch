@@ -97,3 +97,27 @@ Towards_Generating_Stylized_Image_Captions_via_Adversarial_Training
      11.1) pretrain generator
  
      11.2) pretrain discriminator
+     
+ 12) ATTEND_GAN_Advertrain
+     
+     12.1) adversarially train generator using 7.1 & 7.2
+     
+        12.1.1) get generator_loss2 using L2
+     
+        12.1.2) get samples from generator & get rewards using reward_function
+        
+        12.1.3) get generator_loss2
+ 
+     12.2) get total_loss by sum generator_loss1 and generator_loss1
+
+     12.3) make new dataset & dataloader from trained generator g-steps
+
+     12.4) adversarially train discriminator using 7.3 
+     
+     12.5) repeat (g steps for generator, d steps for discriminator)
+
+ 13) ATTEND_GAN_Fit
+ 
+     13.1) train generator
+ 
+     13.2) train discriminator
