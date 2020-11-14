@@ -5,12 +5,16 @@ https://arxiv.org/pdf/1908.02943.pdf
 
 
  0) download coco_dataset.zip and unzip
+ 
+ 
 
  1) data_transformation
 
      1.1) resize to (224, 224, 3)
  
      1.2) make couple :(image, caption_target)
+     
+     
 
  2) ATTEND_GAN_Encoder
   
@@ -19,6 +23,8 @@ https://arxiv.org/pdf/1908.02943.pdf
       usinf Res5c layer to extract the spatial features
   
       7 * 7 * 2048 feature_map 
+      
+      
 
  3) ATTEND_GAN_Dataset
  
@@ -33,12 +39,16 @@ https://arxiv.org/pdf/1908.02943.pdf
      caption_ids
   
      caption_target
+     
+     
 
  4) ATTEND_GAN_DataLoader
  
      4.1) loader_dataset
  
      4.2) train_dataloader
+
+
 
 
  5) ATTEND_GAN_Generator
@@ -48,12 +58,16 @@ https://arxiv.org/pdf/1908.02943.pdf
      5.2) caption_sampler
  
      5.3) generator_loss(lambda * L_1 + L_2)
+     
+     
  
  6) Caption_Discriminator
  
      6.1) using gru to get hidden_state and then get score between [0, 1]
  
      6.2) discriminator_loss
+     
+     
 
  7) ATTEND_GAN_Loss
  
@@ -76,29 +90,39 @@ https://arxiv.org/pdf/1908.02943.pdf
         7.4.1) iterate MC_num times to decrease the variance of the next words
 
 
+
+
  8) ATTEND_GAN_Disdataset
  
      8.1) prepare dataset for training discriminator : real_data 
  
      8.2) prepare dataset for training discriminator : fake_data
+     
+     
 
  9) ATTEND_GAN_DisdataLoader
  
      9.1) ATTEND_GAN_Disdataset
  
      9.2) train_disdataloader
+     
+     
 
  10) ATTEND_GAN_Pretrain
  
      10.1) pretrain caption generator using 7.1 : L2
  
      10.2) pretrain caption discriminator using 7.3 
+     
+     
 
  11) ATTEND_GAN_Prefit
  
      11.1) pretrain generator
  
      11.2) pretrain discriminator
+     
+     
      
  12) ATTEND_GAN_Advertrain
      
@@ -117,6 +141,8 @@ https://arxiv.org/pdf/1908.02943.pdf
      12.4) adversarially train discriminator using 7.3 
      
      12.5) repeat (g steps for generator, d steps for discriminator)
+     
+     
 
 13) ATTEND_GAN_Fit
 
