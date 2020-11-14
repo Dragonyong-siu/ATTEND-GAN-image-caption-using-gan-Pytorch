@@ -116,8 +116,22 @@ Towards_Generating_Stylized_Image_Captions_via_Adversarial_Training
      
      12.5) repeat (g steps for generator, d steps for discriminator)
 
- 13) ATTEND_GAN_Fit
- 
+13) ATTEND_GAN_Fit
+
      13.1) train generator
- 
+     
      13.2) train discriminator
+     
+     13.3) ATTEND_GAN_Adverfit - algorithm 1
+     
+        13.3.1) train generator g_steps
+        
+        13.3.2) call ATTEND_GAN_Generator
+        
+        13.3.3) rename disdataloader
+        
+        13.3.4) train discriminator d_steps
+        
+        13.3.5) call ATTEND_GAN_Discriminator
+        
+        13.3.6) repeat those again
