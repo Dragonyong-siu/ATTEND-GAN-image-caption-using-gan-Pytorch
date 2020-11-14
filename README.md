@@ -4,7 +4,6 @@ Towards_Generating_Stylized_Image_Captions_via_Adversarial_Training
 https://arxiv.org/pdf/1908.02943.pdf
 
 
-
  0) download coco_dataset.zip and unzip
 
  1) data_transformation
